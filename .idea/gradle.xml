@@ -6,6 +6,11 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
+              <build path="$PROJECT_DIR$/libs" name="libs">
+                <projects>
+                  <project path="$PROJECT_DIR$/libs" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/project1" name="project1">
                 <projects>
                   <project path="$PROJECT_DIR$/project1" />
@@ -24,6 +29,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/libs" />
             <option value="$PROJECT_DIR$/project1" />
             <option value="$PROJECT_DIR$/project2" />
           </set>

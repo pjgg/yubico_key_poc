@@ -1,0 +1,15 @@
+# OpenAPI Generator Ignore
+# we only want to generate java files. ignore everythign else
+**/.gitignore
+**/.openapi-generator-ignore
+**/README.md
+**/build.gradle
+**/*.md
+**/gradlew
+**/gradlew.bat
+**/settings.gradle
+**/pom.xml
+**/mvn*
+**/*.jar
+**/*.properties
+**/Application.java
