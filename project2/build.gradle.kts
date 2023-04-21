@@ -21,7 +21,7 @@ java {
 }
 
 openApiGenerate {
-    inputSpec.set("${projectDir}/src/main/resources/swagger.json")
+    inputSpec.set("${projectDir}/../libs/swaggers/project2_swagger_v1_0.json")
     outputDir.set("$buildDir/generated/openapi")
     ignoreFileOverride.set("${projectDir}/.openapi-generator-ignore")
     generatorName.set("java-micronaut-server")
@@ -36,14 +36,16 @@ openApiGenerate {
     ))
 }
 
-tasks.register<Copy>("archiveSwagger") {
-    dependsOn("openApiGenerate")
-    // for example: swagger.json
-    val swaggerFileName = "swagger"
-    val swaggerFileExtension = "json"
-
-    val finalName = "${project.name}" + "_" + swaggerFileName + "." + swaggerFileExtension
-    from("${projectDir}/src/main/resources/" + swaggerFileName + "." + swaggerFileExtension)
-    into("${projectDir}/../libs/swaggers")
-    rename("(.*)\\.$swaggerFileExtension", finalName)
-}
+//tasks.register<Copy>("swaggerArchive") {
+//    dependsOn("openApiGenerate")
+//    // for example: swagger.json
+//    val swaggerFileName = "swagger"
+//    val swaggerFileExtension = "json"
+//    val swaggerFileVersion = "v1_0"
+//    val swaggerLibPath = "${projectDir}/../libs/swaggers"
+//
+//    val finalName = "${project.name}" + "_" + swaggerFileName + "_" + swaggerFileVersion + "." + swaggerFileExtension
+//    from("${projectDir}/src/main/resources/" + swaggerFileName + "." + swaggerFileExtension)
+//    into(swaggerLibPath)
+//    rename("(.*)\\.$swaggerFileExtension", finalName)
+//}
