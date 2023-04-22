@@ -7,11 +7,6 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/libs" name="libs">
-                <projects>
-                  <project path="$PROJECT_DIR$/libs" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/project1" name="project1">
                 <projects>
                   <project path="$PROJECT_DIR$/project1" />
@@ -20,6 +15,11 @@
               <build path="$PROJECT_DIR$/project2" name="project2">
                 <projects>
                   <project path="$PROJECT_DIR$/project2" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/libs" name="libs">
+                <projects>
+                  <project path="$PROJECT_DIR$/libs" />
                 </projects>
               </build>
             </builds>

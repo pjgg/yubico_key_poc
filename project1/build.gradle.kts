@@ -10,8 +10,22 @@ repositories {
 version = "0.1"
 group = "org"
 
-dependencies {
+val micronautVersion: String by project
 
+dependencies {
+    // import a BOM
+    implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut.grpc:micronaut-grpc-runtime")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-validation")
+    // default monitoring instrumentation
+    implementation("io.micronaut:micronaut-management")
+    implementation("io.micronaut.micrometer:micronaut-micrometer-core")
+    implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
+
+    testImplementation("io.micronaut:micronaut-http-client")
 }
 
 java {
