@@ -22,7 +22,7 @@ jobs:
           source-directory: libs/openapi-contracts
           target-directory: openapi-contracts
           destination-github-username: 'pjgg'
-          destination-repository-name: 'cloud-openapi-ui'
+          destination-repository-name: 'bytesandmonkeys/cloud-openapi-ui'
           user-email: pablo.granados@hivemq.com
           commit-message: pushed OpenAPI specs from $GITHUB_REF
           target-branch: main
