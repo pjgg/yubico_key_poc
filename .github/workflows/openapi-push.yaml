@@ -20,6 +20,7 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: libs/openapi-contracts
+          target-directory: openapi-contracts
           destination-github-username: 'pjgg'
           destination-repository-name: 'cloud-openapi-ui'
           user-email: pablo.granados@hivemq.com
