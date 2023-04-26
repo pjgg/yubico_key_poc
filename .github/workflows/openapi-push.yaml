@@ -1,0 +1,28 @@
+name: OpenAPI push
+
+on:
+  push:
+    paths:
+      - libs/openapi-contracts/**
+    branches:
+      - main
+
+jobs:
+  build:
+    name: push to cloud-openapi-ui
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to cloud-openapi-ui@main
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: libs/openapi-contracts
+          destination-github-username: 'pjgg'
+          destination-repository-name: 'cloud-openapi-ui'
+          user-email: pablo.granados@hivemq.com
+          commit-message: pushed OpenAPI specs from $GITHUB_REF
+          target-branch: main
+
